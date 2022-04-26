@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: user-svc
+        uri: http://localhost:8081/
+        predicates:
+        - Path=/user/**
+        filters:
+        - name: UserFilter
+          args:
+            baseMessage: Spring Cloud Gateway UserFilter
+            preLogger: true
+            postLogger: true
+      - id: board-svc
+        uri: http:://localhost:8082/
+        predicates:
+        - Path=/board  
+        filters:
+        - name: BoardFilter
+          args:
+            baseMessage: Spring Cloud Gateway BoardFilter
+            preLogger: true
+            postLogger: true
