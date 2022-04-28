@@ -3,22 +3,24 @@ spring:
     gateway:
       routes:
       - id: user-svc
-        uri: http://localhost:8081/
+        uri: http://localhost:9001/
         predicates:
         - Path=/user/**
         filters:
-        - name: UserFilter
+        - name: UserGatewayFilterFactory
           args:
             baseMessage: Spring Cloud Gateway UserFilter
             preLogger: true
             postLogger: true
       - id: board-svc
-        uri: http:://localhost:8082/
+        uri: http:://localhost:9002/
         predicates:
         - Path=/board  
         filters:
-        - name: BoardFilter
+        - name: BoardGatewayFilterFactory
           args:
             baseMessage: Spring Cloud Gateway BoardFilter
             preLogger: true
             postLogger: true
+server:
+  port: 9000
