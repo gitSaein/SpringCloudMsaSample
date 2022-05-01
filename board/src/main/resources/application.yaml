@@ -1,5 +1,5 @@
 server:
-  port: 8761
+  port: 9091
 eureka:
   instance:
     hostname: 127.0.0.1
@@ -10,4 +10,4 @@ eureka:
      defaultZone: http://${eureka.instance.hostname}:${server:port}/eureka/
 spring:
   application:
-    name: eureka-server
+    name: board-service
