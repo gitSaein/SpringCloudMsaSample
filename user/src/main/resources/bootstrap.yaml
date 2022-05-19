@@ -1,0 +1,18 @@
+server:
+  port: 8098
+spring:
+  application:
+    name: userservice
+  profiles:
+    active: local
+  config:
+    import: "configserver:http:8888"  
+  cloud:
+    config:
+      name: userservice
+      profile: local
+management:
+  endpoint:
+    web:
+      exposure:
+        include: refresh
