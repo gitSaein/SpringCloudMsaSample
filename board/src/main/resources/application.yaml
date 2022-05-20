@@ -9,6 +9,9 @@ spring:
     config:
       name: client
       profile: local
+  data:
+    mongodb:
+      uri: mongodb://root:1234@localhost:27017/mydb
 management:
   endpoint:
     refresh:
