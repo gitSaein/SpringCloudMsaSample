@@ -1,4 +1,4 @@
-package com.springcloud.board.api.board;
+package com.springcloud.board.api;
 
 import com.springcloud.board.domain.board.BoardEntity;
 import lombok.Builder;

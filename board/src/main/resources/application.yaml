@@ -11,7 +11,11 @@ spring:
       profile: local
   data:
     mongodb:
-      uri: mongodb://root:1234@localhost:27017/mydb
+      authentication-database: admin
+      uri: mongodb://saeinlee:1234@localhost:27017/myApp?authSource=admin
+
+  main:
+      allow-bean-definition-overriding: true
 management:
   endpoint:
     refresh:

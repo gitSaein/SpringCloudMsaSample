@@ -8,26 +8,19 @@ import javax.persistence.*;
 
 
 @Getter
-@Entity
-@Document(collection = "boards")
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
+@Document(collection = "board")
 public class BoardEntity extends BaseEntity {
 
+	@Transient
+	public static final String SEQUENCE_NAME = "board_sequence";
+	
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "_id", nullable = false)
-    private Long id;
+    private String _id;
 
-    @Setter
     private String contents;
-    @Setter
     private String location;
-
-
-    @Builder
-    public BoardEntity(String contents, String location){
-        this.contents = contents;
-        this.location= location;
-    }
 
 }

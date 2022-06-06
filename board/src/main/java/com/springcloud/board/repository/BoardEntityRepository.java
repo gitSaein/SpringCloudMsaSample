@@ -1,8 +1,10 @@
-package com.springcloud.board.domain.board;
+package com.springcloud.board.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
+import com.springcloud.board.domain.board.BoardEntity;
+
+//@Repository
 public interface BoardEntityRepository extends MongoRepository<BoardEntity, Long> {
 }
