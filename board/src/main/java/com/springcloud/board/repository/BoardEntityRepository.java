@@ -5,6 +5,5 @@ import org.springframework.stereotype.Repository;
 
 import com.springcloud.board.domain.board.BoardEntity;
 
-//@Repository
-public interface BoardEntityRepository extends MongoRepository<BoardEntity, Long> {
+public interface BoardEntityRepository extends MongoRepository<BoardEntity, String> {
 }
