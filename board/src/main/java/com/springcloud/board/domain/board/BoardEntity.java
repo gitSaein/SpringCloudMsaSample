@@ -3,10 +3,8 @@ package com.springcloud.board.domain.board;
 import com.springcloud.board.domain.BaseEntity;
 import lombok.*;
 
-import org.springframework.data.annotation.ReadOnlyProperty;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.List;
 
@@ -25,12 +23,11 @@ public class BoardEntity extends BaseEntity {
 	public static final String SEQUENCE_NAME = "board_sequence";
 	
     @Id
-    private String _id;
+    private String id;
 
     private String contents;
     private String location;
-    @DBRef(lazy = true)    
-    @ReadOnlyProperty
+    @DBRef
     private List<AttachmentsEntity> attachments;
 
 }
